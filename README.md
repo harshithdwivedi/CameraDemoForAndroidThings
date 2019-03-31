@@ -1,5 +1,7 @@
 # CameraDemoForAndroidThings
 
+Original Author : [https://github.com/weichen2046/CameraDemoForAndroidThings](https://github.com/weichen2046/CameraDemoForAndroidThings)
+
 Camera demo for android things, current support capture still picture, camera preview as well as capture still picture while preview is on-going.
 
 ## Schematics
