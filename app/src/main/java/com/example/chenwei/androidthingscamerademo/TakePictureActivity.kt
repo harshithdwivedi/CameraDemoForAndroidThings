@@ -43,8 +43,8 @@ class TakePictureActivity : Activity() {
 
     private lateinit var mCamera: DemoCamera
 
-    private var mButtonDriver1: ButtonInputDriver? = null
-    private var mButtonDriver2: ButtonInputDriver? = null
+//    private var mButtonDriver1: ButtonInputDriver? = null
+//    private var mButtonDriver2: ButtonInputDriver? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,41 +59,41 @@ class TakePictureActivity : Activity() {
         mCamera.openCamera(this)
 
         // Initial button driver.
-        try {
-            mButtonDriver1 = ButtonInputDriver(BUTTON_GPIO_PIN_1, Button.LogicState.PRESSED_WHEN_LOW,
-                    KeyEvent.KEYCODE_ENTER)
-        } catch (ex: IOException) {
-            Log.d(TAG, "Button1 error when create button driver.", ex)
-        }
-        mButtonDriver1?.register()
-
-        try {
-
-            mButtonDriver2 = ButtonInputDriver(BUTTON_GPIO_PIN_2, Button.LogicState.PRESSED_WHEN_LOW,
-                    KeyEvent.KEYCODE_B)
-        } catch (ex: IOException) {
-            Log.d(TAG, "Button2 error when create button driver.")
-        }
-        mButtonDriver2?.register()
+//        try {
+//            mButtonDriver1 = ButtonInputDriver(BUTTON_GPIO_PIN_1, Button.LogicState.PRESSED_WHEN_LOW,
+//                    KeyEvent.KEYCODE_ENTER)
+//        } catch (ex: IOException) {
+//            Log.d(TAG, "Button1 error when create button driver.", ex)
+//        }
+//        mButtonDriver1?.register()
+//
+//        try {
+//
+//            mButtonDriver2 = ButtonInputDriver(BUTTON_GPIO_PIN_2, Button.LogicState.PRESSED_WHEN_LOW,
+//                    KeyEvent.KEYCODE_B)
+//        } catch (ex: IOException) {
+//            Log.d(TAG, "Button2 error when create button driver.")
+//        }
+//        mButtonDriver2?.register()
     }
 
     override fun onPause() {
         super.onPause()
-        mButtonDriver1?.unregister()
-        try {
-            mButtonDriver1?.close()
-        } catch (ex: IOException) {
-            Log.d(TAG, "Button1 error when close button driver.")
-        }
-        mButtonDriver1 = null
-
-        mButtonDriver2?.unregister()
-        try {
-            mButtonDriver2?.close()
-        } catch (ex: IOException) {
-            Log.d(TAG, "Button2 error when close button driver.")
-        }
-        mButtonDriver2 = null
+//        mButtonDriver1?.unregister()
+//        try {
+//            mButtonDriver1?.close()
+//        } catch (ex: IOException) {
+//            Log.d(TAG, "Button1 error when close button driver.")
+//        }
+//        mButtonDriver1 = null
+//
+//        mButtonDriver2?.unregister()
+//        try {
+//            mButtonDriver2?.close()
+//        } catch (ex: IOException) {
+//            Log.d(TAG, "Button2 error when close button driver.")
+//        }
+//        mButtonDriver2 = null
 
         mCamera.shutDown()
         stopBackgroudThread()
